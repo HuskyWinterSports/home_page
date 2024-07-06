@@ -1,0 +1,50 @@
+#maincontent {
+    margin: 1em auto;
+    max-width: 52em;
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+header {
+    position: sticky;
+    top: 0;
+    background-color: white;
+    padding: 10px 10px;
+}
+
+#logo {
+    width: 3rem;
+}
+
+#slides {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+
+    overflow-x: auto;
+    overscroll-behavior-inline: contain;
+
+    scroll-snap-type: x mandatory;
+    scroll-padding: 0 24px;
+    scroll-snap-align: start;
+    
+}
+
+.slide {
+    scroll-snap-align: start;
+}
+.slide img {
+    width: 60em;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+}
+
+
+span.email b {
+	display: none;
+}
