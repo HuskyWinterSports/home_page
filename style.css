@@ -1,5 +1,28 @@
+/* Color Pallette
+#32006E
+#4B2E83
+#E8E3D3
+#3C6E00
+#748067
+*/
+:root {
+    --primary: #23006E;
+    --light-primary: #4B2E83;
+    --secondary: #E8E3D3;
+    --contrast: #3C6E00;
+    --light-contrast: #748067;
+}
+
+body {
+    font-family: Tahoma, sans-serif;
+    margin: 0;
+    /* background-color: var(--secondary); */
+    /* color: var(--primary); */
+}
+
 #maincontent {
     margin: 1em auto;
+    padding: 0 1em;
     max-width: 52em;
 }
 
@@ -10,11 +33,27 @@
     align-items: center;
 }
 
+.container > a {
+    margin: 0 5px;
+}
+
+a:link, a:visited {
+    color: var(--primary);
+    text-decoration: none;
+
+}
+
+
+a:hover {
+    color: var(--contrast);
+    text-decoration: underline;
+}
+
 header {
     position: sticky;
     top: 0;
     background-color: white;
-    padding: 10px 10px;
+    padding: 3px 10px;
 }
 
 #logo {
@@ -38,13 +77,23 @@ header {
 .slide {
     scroll-snap-align: start;
 }
+
 .slide img {
     width: 60em;
     aspect-ratio: 16 / 9;
     object-fit: cover;
 }
 
-
 span.email b {
 	display: none;
+}
+
+.FAQ > p:nth-child(odd) {
+    color: var(--light-primary);
+    font-weight: bold;
+}
+
+h1 {
+    margin-top: 1em;
+    margin-bottom: 1em;
 }
