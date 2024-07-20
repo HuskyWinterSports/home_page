@@ -13,11 +13,82 @@
     --light-contrast: #748067;
 }
 
+/* for mobile devices */
+@media only screen and (max-width: 600px) {
+    /* menu unhiding */
+    #togglenav:checked ~ header {
+        transform: translateY(0%);
+        transition: transform 0.4s;
+        position: relative;
+        padding: 5px 10px !important;
+    }
+
+    /* there are two logos one is linked back to hws and one is the menu checkbox */
+    #logo {
+        visibility: hidden;
+        display: none;
+    }
+
+    /* hide the menu */
+    header {
+        flex-direction: column;
+        align-items: start;
+        transform: translateY(-100%);
+        position: fixed;
+        width: 100%;
+        padding: 0 !important;
+        /* margin: 0; */
+    }
+
+    /* make the navigation links have no size, or else the menu will bleed into the page */
+    a.navitem {
+        display: none;
+        align-self:flex-start;
+    }
+
+    #togglenav:checked ~ header > a.navitem {
+        display: block !important;
+    }
+
+    /* unhide the checkbox for the menu */
+    #togglenav {
+        visibility: visible;
+        display: block;
+    }
+
+}
+
+/* hide the checkbox for the menu */
+@media only screen and (min-width: 600px) {
+    #togglenav {
+        visibility: hidden;
+        display: none;
+    }
+}
+
+/* TAHOMAAAAAAA I LOVE MT. TAHOMA!!!!!11!1!! */
 body {
     font-family: Tahoma, sans-serif;
     margin: 0;
     /* background-color: var(--secondary); */
     /* color: var(--primary); */
+}
+
+/* For accessablility reasons the first link skips the menu and links the the main content */
+/* Hides the link until it is selected */
+#skip {
+    z-index: 499;
+    background-color: var(--secondary);
+    height: 30px;
+    left: 50%;
+    position: absolute;
+    transform: translateY(-100%);
+    transition: transform 0.3s;
+}
+
+#skip:focus {
+    transform: translateY(0%);
+
 }
 
 #maincontent {
@@ -26,40 +97,61 @@ body {
     max-width: 52em;
 }
 
-.container {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
-}
-
-.container > a {
-    margin: 0 5px;
-}
-
-a:link, a:visited {
+/* The menu checkbox */
+/* hides the actual checkbox */
+#togglenav {
+    position: sticky;
+    /* top: 0; */
+    right: 0;
+    z-index: 2;
+    height: 10;
+    padding: .5rem;
     color: var(--primary);
     text-decoration: none;
 
+    /* stole from: https://moderncss.dev/pure-css-custom-checkbox-style/ */
+    /* Add if not using autoprefixer */
+    -webkit-appearance: none;
+    appearance: none;
+    /* For iOS < 15 to remove gradient background */
+    background-color: #fff;
+    /* Not removed via appearance */
+    margin: 0;
 }
 
+/* add the logo as the checkbox */
+#togglenav::after {
+    content: url(imgs/logo_extra_small.png);
+    font-size: large;
+}
 
-a:hover {
+#togglenav:hover {
     color: var(--contrast);
     text-decoration: underline;
 }
 
 header {
+    display: flex;
+    /* flex-direction: row; */
+    justify-content: space-around;
+    align-items: center;
     position: sticky;
     top: 0;
     background-color: white;
     padding: 3px 10px;
 }
 
-#logo {
-    width: 3rem;
+header > a {
+    margin: 0 5px;
+    font-size: larger;
 }
 
+#logo {
+    width: 3rem;
+    padding: .5rem;
+}
+
+/* The slide show of images */
 #slides {
     display: flex;
     flex-direction: row;
@@ -84,13 +176,27 @@ header {
     object-fit: cover;
 }
 
+/* Do not remove */
+/* email spam proofing techique */
 span.email b {
 	display: none;
 }
 
+/* for the lessons page */
+/* highlights each question */
 .FAQ > p:nth-child(odd) {
     color: var(--light-primary);
     font-weight: bold;
+}
+
+a:link, a:visited {
+    color: var(--primary);
+    text-decoration: none;
+}
+
+a:hover {
+    color: var(--contrast);
+    text-decoration: underline;
 }
 
 h1 {

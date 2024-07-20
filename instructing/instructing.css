@@ -1,0 +1,21 @@
+/* fixes some fun images */
+.fixed {
+    position: fixed;
+    width: 16em;
+}
+
+.br {
+    bottom: 0;
+    right: 0;
+}
+
+.bl {
+    bottom: 0;
+    left: 0;
+}
+
+@media only screen and (max-width: 600px) {
+    img {
+        visibility: hidden;
+    }
+}
