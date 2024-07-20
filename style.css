@@ -15,28 +15,42 @@
 
 /* for mobile devices */
 @media only screen and (max-width: 600px) {
+    #togglenav:checked ~ header {
+        transform: translateY(0%);
+        transition: transform 0.4s;
+        position: relative;
+        padding: 5px 10px !important;
+    }
+
+    #logo {
+        visibility: hidden;
+        display: none;
+    }
+
     header {
         flex-direction: column;
-        align-items: start
+        align-items: start;
+        transform: translateY(-100%);
+        position: fixed;
+        width: 100%;
+        padding: 0 !important;
+        /* margin: 0; */
     }
 
-    #togglenav:checked ~ header > a {
-        display: block;
-        visibility: visible;
-        transition: transform 0.3s;
-
-    }
-
-    .navitem {
-        align-self:flex-start;
+    a.navitem {
         display: none;
+        align-self:flex-start;
         visibility: hidden;
+    }
+
+    #togglenav:checked ~ header > a.navitem {
+        visibility: visible !important;
+        display: block !important;
     }
 
     #togglenav {
         visibility: visible;
         display: block;
-        width: 100%;
     }
 
 }
@@ -44,9 +58,7 @@
 @media only screen and (min-width: 600px) {
     #togglenav {
         visibility: hidden;
-        display: none;
-    }
-
+        display: none;    }
 }
 
 
@@ -64,7 +76,7 @@ body {
 }
 
 #skip {
-    z-index: 500;
+    z-index: 499;
     background-color: var(--secondary);
     height: 30px;
     left: 50%;
@@ -75,7 +87,42 @@ body {
 
 #skip:focus {
     transform: translateY(0%);
+
 }
+
+#togglenav {
+    position: sticky;
+    /* top: 0; */
+    right: 0;
+    z-index: 2;
+    height: 10;
+    padding: .5rem;
+    color: var(--primary);
+    text-decoration: none;
+
+}
+
+#togglenav::after {
+    content: url(imgs/logo_extra_small.png);
+    font-size: large;
+}
+
+#togglenav:hover {
+    color: var(--contrast);
+    text-decoration: underline;
+}
+
+input[type="checkbox"] {
+    /* Add if not using autoprefixer */
+    -webkit-appearance: none;
+    appearance: none;
+    /* For iOS < 15 to remove gradient background */
+    background-color: #fff;
+    /* Not removed via appearance */
+    margin: 0;
+  }
+  
+  
 
 .container {
     display: flex;
@@ -86,6 +133,7 @@ body {
 
 .container > a {
     margin: 0 5px;
+    font-size: larger;
 }
 
 a:link, a:visited {
@@ -101,13 +149,14 @@ a:hover {
 
 header {
     position: sticky;
-    top: 1;
+    top: 0;
     background-color: white;
     padding: 3px 10px;
 }
 
 #logo {
     width: 3rem;
+    padding: .5rem;
 }
 
 #slides {
