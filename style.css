@@ -15,6 +15,7 @@
 
 /* for mobile devices */
 @media only screen and (max-width: 600px) {
+    /* menu unhiding */
     #togglenav:checked ~ header {
         transform: translateY(0%);
         transition: transform 0.4s;
@@ -22,11 +23,13 @@
         padding: 5px 10px !important;
     }
 
+    /* there are two logos one is linked back to hws and one is the menu checkbox */
     #logo {
         visibility: hidden;
         display: none;
     }
 
+    /* hide the menu */
     header {
         flex-direction: column;
         align-items: start;
@@ -37,17 +40,17 @@
         /* margin: 0; */
     }
 
+    /* make the navigation links have no size, or else the menu will bleed into the page */
     a.navitem {
         display: none;
         align-self:flex-start;
-        visibility: hidden;
     }
 
     #togglenav:checked ~ header > a.navitem {
-        visibility: visible !important;
         display: block !important;
     }
 
+    /* unhide the checkbox for the menu */
     #togglenav {
         visibility: visible;
         display: block;
@@ -55,13 +58,15 @@
 
 }
 
+/* hide the checkbox for the menu */
 @media only screen and (min-width: 600px) {
     #togglenav {
         visibility: hidden;
-        display: none;    }
+        display: none;
+    }
 }
 
-
+/* TAHOMAAAAAAA I LOVE MT. TAHOMA!!!!!11!1!! */
 body {
     font-family: Tahoma, sans-serif;
     margin: 0;
@@ -69,12 +74,8 @@ body {
     /* color: var(--primary); */
 }
 
-#maincontent {
-    margin: 1em auto;
-    padding: 0 1em;
-    max-width: 52em;
-}
-
+/* For accessablility reasons the first link skips the menu and links the the main content */
+/* Hides the link until it is selected */
 #skip {
     z-index: 499;
     background-color: var(--secondary);
@@ -90,6 +91,14 @@ body {
 
 }
 
+#maincontent {
+    margin: 1em auto;
+    padding: 0 1em;
+    max-width: 52em;
+}
+
+/* The menu checkbox */
+/* hides the actual checkbox */
 #togglenav {
     position: sticky;
     /* top: 0; */
@@ -100,8 +109,17 @@ body {
     color: var(--primary);
     text-decoration: none;
 
+    /* stole from: https://moderncss.dev/pure-css-custom-checkbox-style/ */
+    /* Add if not using autoprefixer */
+    -webkit-appearance: none;
+    appearance: none;
+    /* For iOS < 15 to remove gradient background */
+    background-color: #fff;
+    /* Not removed via appearance */
+    margin: 0;
 }
 
+/* add the logo as the checkbox */
 #togglenav::after {
     content: url(imgs/logo_extra_small.png);
     font-size: large;
@@ -112,46 +130,20 @@ body {
     text-decoration: underline;
 }
 
-input[type="checkbox"] {
-    /* Add if not using autoprefixer */
-    -webkit-appearance: none;
-    appearance: none;
-    /* For iOS < 15 to remove gradient background */
-    background-color: #fff;
-    /* Not removed via appearance */
-    margin: 0;
-  }
-  
-  
-
-.container {
+header {
     display: flex;
     /* flex-direction: row; */
     justify-content: space-around;
     align-items: center;
-}
-
-.container > a {
-    margin: 0 5px;
-    font-size: larger;
-}
-
-a:link, a:visited {
-    color: var(--primary);
-    text-decoration: none;
-}
-
-
-a:hover {
-    color: var(--contrast);
-    text-decoration: underline;
-}
-
-header {
     position: sticky;
     top: 0;
     background-color: white;
     padding: 3px 10px;
+}
+
+header > a {
+    margin: 0 5px;
+    font-size: larger;
 }
 
 #logo {
@@ -159,6 +151,7 @@ header {
     padding: .5rem;
 }
 
+/* The slide show of images */
 #slides {
     display: flex;
     flex-direction: row;
@@ -183,13 +176,27 @@ header {
     object-fit: cover;
 }
 
+/* Do not remove */
+/* email spam proofing techique */
 span.email b {
 	display: none;
 }
 
+/* for the lessons page */
+/* highlights each question */
 .FAQ > p:nth-child(odd) {
     color: var(--light-primary);
     font-weight: bold;
+}
+
+a:link, a:visited {
+    color: var(--primary);
+    text-decoration: none;
+}
+
+a:hover {
+    color: var(--contrast);
+    text-decoration: underline;
 }
 
 h1 {
