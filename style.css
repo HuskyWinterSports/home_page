@@ -207,4 +207,5 @@ h1 {
 .yellow {
     background-color: yellow;
     text-align: center;
+    border-radius: 0.25em;
 }
