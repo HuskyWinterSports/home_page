@@ -2,4 +2,4 @@
 deployment:
   tasks:
     - export DEPLOYPATH=/home/huskyciod/public_html/
-    - /bin/cp -rv --update=all * $DEPLOYPATH
+    - /bin/cp -rv --update=all instructing/index.html $DEPLOYPATH
