@@ -1,7 +1,7 @@
 ---
 deployment:
   tasks:
-    - export DEPLOYPATH=/home/huskyciod/public_html/
+    - export DEPLOYPATH=~/public_html/
     - /bin/rm -rf $DEPLOYPATH
     - /bin/mkdir $DEPLOYPATH
     - /bin/cp -ru . $DEPLOYPATH
