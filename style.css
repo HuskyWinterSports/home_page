@@ -168,6 +168,10 @@ header > a {
 
 .slide {
     scroll-snap-align: start;
+    position: relative;
+    text-align: center;
+    color: white;
+    text-shadow: 2px 2px 5px black;
 }
 
 .slide img {
@@ -190,8 +194,10 @@ span.email b {
 }
 
 a:link, a:visited {
-    color: var(--primary);
+    color: var(--light-primary);
     text-decoration: none;
+    font-weight: bold;
+
 }
 
 a:hover {
@@ -209,3 +215,10 @@ h1 {
     text-align: center;
     border-radius: 0.25em;
 }
+
+/* for text on top of images */
+.bottom-left {
+    position: absolute;
+    bottom: 8px;
+    left: 16px;
+  }
