@@ -91,7 +91,7 @@ body {
 
 }
 
-#maincontent {
+main {
     margin: 1em auto;
     padding: 0 1em;
     max-width: 52em;
@@ -163,12 +163,12 @@ header > a {
     scroll-snap-type: x mandatory;
     scroll-padding: 0 24px;
     scroll-snap-align: start;
-    
 }
 
 .slide {
     scroll-snap-align: start;
     position: relative;
+    z-index: -1;
     text-align: center;
     color: white;
     text-shadow: 2px 2px 5px black;
