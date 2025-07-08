@@ -121,7 +121,7 @@ main {
 
 /* add the logo as the checkbox */
 #togglenav::after {
-    content: url(imgs/logo_extra_small.png);
+    content: url(imgs/hamburger.png);
     font-size: large;
 }
 
@@ -162,7 +162,6 @@ header > a {
 
     scroll-snap-type: x mandatory;
     scroll-padding: 0 24px;
-    scroll-snap-align: start;
 }
 
 .slide {
