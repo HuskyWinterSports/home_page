@@ -54,6 +54,7 @@
     #togglenav {
         visibility: visible;
         display: block;
+        height: 69px;
     }
 
 }
