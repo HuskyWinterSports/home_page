@@ -14,8 +14,69 @@
     left: 0;
 }
 
+.top {
+    top: 0;
+}
+
+div.top {
+    transform: translateY(-20%);
+    height: 430px;
+    width: 100%;
+    z-index: -1;
+}
+
+#chairlift {
+    visibility: hidden;
+    animation: move_right 6s linear infinite 2s reverse forwards;
+}
+
+.middleleft {
+    left: 0;
+    top: 20dvh;
+    transform: translateX(-128px);
+}
+
+
+#nathan:hover {
+    animation: say_hi 5s ease-out 0s forwards;
+
+}
+
+@keyframes move_right {
+    from {
+        visibility: visible;
+        transform: translateX(-20vw);
+    }
+    to {
+        visibility: visible;
+        transform: translateX(200vw);
+    }
+}
+
+@keyframes say_hi {
+    from {
+        /* rotate: 0deg; */
+        transform: rotate(0deg) translateX(-128px);
+    }
+    20% {
+        /* rotate: 30deg; */
+        transform: rotate(30deg) translateX(50px);
+    }
+    30% {
+        transform: rotate(30deg) translateX(50px) translateY(-40px) scaleY(120%);
+    }
+    40% {
+        transform: rotate(30deg) translateX(50px);
+    }
+    to {
+        /* rotate: 0deg; */
+        /* transform: rotate(0deg) translateX(-128px); */
+        transform: rotate(30deg) translateX(200vw);
+    }
+}
+
 @media only screen and (max-width: 600px) {
     img {
-        visibility: hidden;
+        visibility: hidden !important;
     }
 }
