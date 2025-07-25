@@ -89,7 +89,10 @@ body {
 
 #skip:focus {
     transform: translateY(0%);
+}
 
+#maincontent {
+    scroll-margin-top: 5em;
 }
 
 main {
