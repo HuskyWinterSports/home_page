@@ -230,4 +230,18 @@ h1 {
     position: absolute;
     bottom: 8px;
     left: 16px;
-  }
+}
+
+@view-transition {
+    navigation: auto;
+}
+
+::view-transition-old(root),
+::view-transition-new(root) {
+    animation: fade 0.3 ease both;
+}
+
+@keyframes fade {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
