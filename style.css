@@ -91,11 +91,17 @@ body {
     transform: translateY(0%);
 }
 
-#maincontent {
+#maincontent, #about, #contact {
     scroll-margin-top: 5em;
 }
 
 main {
+    margin: 1em auto;
+    padding: 0 1em;
+    max-width: 52em;
+}
+
+footer {
     margin: 1em auto;
     padding: 0 1em;
     max-width: 52em;
