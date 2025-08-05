@@ -3,9 +3,17 @@ import React, { useState } from 'react';
 
 import '../assets/Navbar.css';
 
+import { useLocation } from 'react-router-dom';
+
 export default function Navbar() {
     const [isOpen, setIsOpen] = useState(false);
     const [hovered, setHovered] = useState(false);
+    const location = useLocation();
+
+    // Close menu on route change
+    React.useEffect(() => {
+        setIsOpen(false);
+    }, [location.pathname]);
 
     const toggleMenu = () => {
         setIsOpen(!isOpen);
@@ -14,7 +22,9 @@ export default function Navbar() {
     return (
         <nav className="navbar">
             <button className={`navbar-toggle ${isOpen ? 'is-active' : ''}`} onClick={toggleMenu}>
-                <span className="navbar-icon"></span>
+                <span className="bar bar-one"></span>
+                <span className="bar bar-two"></span>
+                <span className="bar bar-three"></span>
             </button>
             <div className={`navbar-menu ${isOpen ? 'is-active' : ''}`}>
                 <ul className="navbar-links">
