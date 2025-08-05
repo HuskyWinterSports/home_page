@@ -7,7 +7,7 @@ export default function LessonInfo() {
                 <h1>Lesson Information</h1>
                 <p>Come shred with us! Husky Winter Sports offers both ski and snowboarding lessons for kids and adults alike!</p>
                 <h2>Location and Scheduling</h2>
-                <p>Our lessons run for six total weekends during winter quarter. We offer 3-week (A <em>or B</em>) or 6-week lesson packages. Students may choose between our Saturday (<em>1:30 - 4pm</em>) or Sunday (<em>11:30 - 2pm</em>) session. </p>
+                <p>Our lessons run for six total weekends during winter quarter. We offer 3-week (A <strong>or B</strong>) or 6-week lesson packages. Students may choose between our Saturday (<strong>1:30 - 4pm</strong>) or Sunday (<strong>11:30 - 2pm</strong>) session. </p>
                 <h2>Group Lessons</h2>
                 <p>Ages 7+, suitable for all skill levels! Group size is anywhere between 3-5 students per instructor, arranged based on sport type, age, and ability level</p>
                 <h2>Group Lessons</h2>
