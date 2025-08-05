@@ -11,11 +11,11 @@ function App() {
 
   return (
     <>
-      {/* <Navbar /> */}
+      <Navbar />
       <main>
         <Routes>
           <Route path="/" element={<Home />} />
-          {/* <Route path="lessons">
+          <Route path="lessons">
             <Route index element={<LessonsInfo />} />
             <Route path="lesson-registration" element={<LessonRegistration />} />
             <Route path="join-our-mailing-list" element={<JoinMailingList />} />
@@ -27,12 +27,12 @@ function App() {
           <Route path="questions">
             <Route index element={<FAQ />} />
             <Route path="contact-us" element={<ContactUs />} /> 
-          </Route> */}
+          </Route>
         </Routes>
       </main>
-      {/* <Footer /> */}
+      <Footer />
     </>
   )
 }
 
-export default App
+export default App;
