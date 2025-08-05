@@ -22,18 +22,26 @@ export default function Navbar() {
                         <NavLink to="/" end>Home</NavLink>
                     </li>
                     <li onMouseEnter={() => setHovered(true)} onMouseLeave={() => setHovered(false)}>
-                        <NavLink to="/lessons">Lessons</NavLink>
+                        <NavLink to="/lesson-info">Lessons</NavLink>
                         <ul className={`dropdown ${hovered ? 'is-active' : ''}`}>
-                            <li><NavLink to="/lessons/less">Lesson Info</NavLink></li>
-                            <li><NavLink to="/lessons/lesson-registration">Lesson Registration</NavLink></li>
-                            <li><NavLink to="/lessons/join-our-mailing-list">Join Our Mailing List</NavLink></li>
+                            <li><NavLink to="/lesson-info">Lesson Info</NavLink></li>
+                            <li><NavLink to="/lesson-registration">Lesson Registration</NavLink></li>
+                            <li><NavLink to="/join-our-mailing-list">Join Our Mailing List</NavLink></li>
                         </ul>
                     </li>
                     <li onMouseEnter={() => setHovered(true)} onMouseLeave={() => setHovered(false)}>
-                        <NavLink to="/club-info">Club Info</NavLink>
+                        <NavLink to="/become-an-instructor">Club Info</NavLink>
+                        <ul className={`dropdown ${hovered ? 'is-active' : ''}`}>
+                            <li><NavLink to="/become-an-instructor">Become an Instructor</NavLink></li>
+                            <li><NavLink to="/diversity-and-inclusion">Diversity and Inclusion</NavLink></li>
+                        </ul>
                     </li>
                     <li onMouseEnter={() => setHovered(true)} onMouseLeave={() => setHovered(false)}>
-                        <NavLink to="/questions">Questions</NavLink>
+                        <NavLink to="/faq">Questions</NavLink>
+                        <ul className={`dropdown ${hovered ? 'is-active' : ''}`}>
+                            <li><NavLink to="/faq">FAQ</NavLink></li>
+                            <li><NavLink to="/contact-us">Contact Us</NavLink></li>
+                        </ul>
                     </li>
                 </ul>
             </div>
