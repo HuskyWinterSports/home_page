@@ -7,7 +7,9 @@ import { useLocation } from 'react-router-dom';
 
 export default function Navbar() {
     const [isOpen, setIsOpen] = useState(false);
-    const [hovered, setHovered] = useState(false);
+    const [hoveredQuestions, setHoveredQuestions] = useState(false);
+    const [hoveredLessons, setHoveredLessons] = useState(false);
+    const [hoveredClub, setHoveredClub] = useState(false);
     const location = useLocation();
 
     // Close menu on route change
@@ -28,27 +30,27 @@ export default function Navbar() {
             </button>
             <div className={`navbar-menu ${isOpen ? 'is-active' : ''}`}>
                 <ul className="navbar-links">
-                    <li onMouseEnter={() => setHovered(true)} onMouseLeave={() => setHovered(false)}>
+                    <li>
                         <NavLink to="/" end>Home</NavLink>
                     </li>
-                    <li onMouseEnter={() => setHovered(true)} onMouseLeave={() => setHovered(false)}>
+                    <li onMouseEnter={() => setHoveredLessons(true)} onMouseLeave={() => setHoveredLessons(false)}>
                         <NavLink to="/lesson-info">Lessons</NavLink>
-                        <ul className={`dropdown ${hovered ? 'is-active' : ''}`}>
+                        <ul className={`dropdown ${hoveredLessons ? 'is-active' : ''}`}>
                             <li><NavLink to="/lesson-info">Lesson Info</NavLink></li>
                             <li><NavLink to="/lesson-registration">Lesson Registration</NavLink></li>
                             <li><NavLink to="/join-our-mailing-list">Join Our Mailing List</NavLink></li>
                         </ul>
                     </li>
-                    <li onMouseEnter={() => setHovered(true)} onMouseLeave={() => setHovered(false)}>
+                    <li onMouseEnter={() => setHoveredClub(true)} onMouseLeave={() => setHoveredClub(false)}>
                         <NavLink to="/become-an-instructor">Club Info</NavLink>
-                        <ul className={`dropdown ${hovered ? 'is-active' : ''}`}>
+                        <ul className={`dropdown ${hoveredClub ? 'is-active' : ''}`}>
                             <li><NavLink to="/become-an-instructor">Become an Instructor</NavLink></li>
                             <li><NavLink to="/diversity-and-inclusion">Diversity and Inclusion</NavLink></li>
                         </ul>
                     </li>
-                    <li onMouseEnter={() => setHovered(true)} onMouseLeave={() => setHovered(false)}>
+                    <li onMouseEnter={() => setHoveredQuestions(true)} onMouseLeave={() => setHoveredQuestions(false)}>
                         <NavLink to="/faq">Questions</NavLink>
-                        <ul className={`dropdown ${hovered ? 'is-active' : ''}`}>
+                        <ul className={`dropdown ${hoveredQuestions ? 'is-active' : ''}`}>
                             <li><NavLink to="/faq">FAQ</NavLink></li>
                             <li><NavLink to="/contact-us">Contact Us</NavLink></li>
                         </ul>
